@@ -16,6 +16,13 @@ const Review = () => {
     return number;
   };
 
+  const prevPerson = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return checkNumber(newIndex);
+    });
+  };
+
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
@@ -23,11 +30,13 @@ const Review = () => {
     });
   };
 
-  const prevPerson = () => {
-    setIndex((index) => {
-      let newIndex = index - 1;
-      return checkNumber(newIndex);
-    });
+  const randomPerson = () => {
+    let randomNumber = Math.floor(Math.random() * people.length);
+    console.log(randomNumber);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    setIndex(checkNumber(randomNumber));
   };
 
   return (
@@ -49,7 +58,9 @@ const Review = () => {
           <FaChevronRight />
         </button>
       </div>
-      <button className="random-btn">suprise me</button>
+      <button className="random-btn" onClick={randomPerson}>
+        suprise me
+      </button>
     </article>
   );
 };
