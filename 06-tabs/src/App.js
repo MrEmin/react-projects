@@ -42,7 +42,7 @@ function App() {
             return (
               <button
                 key={item.id}
-                className={`job-btn ${index === value && 'active-btn'}`}
+                className={`job-btn ${index === value && "active-btn"}`}
                 onClick={() => setValue(index)}
               >
                 {item.company}
