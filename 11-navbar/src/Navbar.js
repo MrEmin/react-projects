@@ -1,23 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaBars, FaTwitter } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { links, social } from "./data";
 import logo from "./logo.svg";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
-  const linksRef = useRef(null)
+  const linksRef = useRef(null);
 
   useEffect(() => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height
+    const linksHeight = linksRef.current.getBoundingClientRect().height;
     console.log(linksContainerRef.current.getBoundingClientRect());
     if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`
+      linksContainerRef.current.style.height = `${linksHeight}px`;
+    } else {
+      linksContainerRef.current.style = "0px";
     }
-    else {
-      linksContainerRef.current.style = "0px"
-    }
-  }, [showLinks])
+  }, [showLinks]);
 
   return (
     <nav>
