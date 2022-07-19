@@ -33,8 +33,8 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    dispatch({type: "GET_TOTALS", payload:})
-  }, [state.cart])
+    dispatch({ type: "GET_TOTALS" });
+  }, [state.cart]);
 
   return (
     <AppContext.Provider
